@@ -17,30 +17,30 @@ import static org.mockito.Mockito.spy;
  * 在GameControllerTest文件中完成GameController中对应的单元测试
  */
 public class GameControllerTest {
-    private GameController gameController;
-    private Game game;
-    private GameView gameView;
-
-    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
-    @Before
-    public void setUp() throws Exception {
-        game=mock(Game.class);
-        gameView=spy(GameView.class);
-        gameController=new GameController(game,gameView);
-
-        System.setOut(new PrintStream(outContent));
-    }
-
-    private String systemOut() {
-        return outContent.toString();
-    }
-
-    @Test
-    public void testBeginGame() throws IOException {
-        gameController.beginGame();
-        assertEquals("------Guess Number Game, You have 6 chances to guess!  ------\r\n",systemOut());
-    }
+//    private GameController gameController;
+//    private Game game;
+//    private GameView gameView;
+//
+//    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+//
+//    @Before
+//    public void setUp() throws Exception {
+//        game=mock(Game.class);
+//        gameView=spy(GameView.class);
+//        gameController=new GameController(game,gameView);
+//
+//        System.setOut(new PrintStream(outContent));
+//    }
+//
+//    private String systemOut() {
+//        return outContent.toString();
+//    }
+//
+//    @Test
+//    public void testBeginGame() throws IOException {
+//        gameController.beginGame();
+//        assertEquals("------Guess Number Game, You have 6 chances to guess!  ------\r\n",systemOut());
+//    }
 
 //    @Test
 //    public void testPlay() throws IOException{
