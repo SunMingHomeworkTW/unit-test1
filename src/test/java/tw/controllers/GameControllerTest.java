@@ -42,8 +42,8 @@ public class GameControllerTest {
         assertEquals("------Guess Number Game, You have 6 chances to guess!  ------\r\n",systemOut());
     }
 
-    @Test
-    public void testPlay() throws IOException{
+//    @Test
+//    public void testPlay() throws IOException{
 //        when(game.checkCoutinue()).thenReturn(true).thenReturn(false);
 //
 //        Answer actualAnswer=Answer.createAnswer("1 2 3 4");
@@ -57,5 +57,5 @@ public class GameControllerTest {
 //        gameController.play(inputCommand);
 //
 //        assertEquals("Game Status: success\r\n",systemOut());
-    }
+//    }
 }
