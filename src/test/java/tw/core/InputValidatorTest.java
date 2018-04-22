@@ -19,17 +19,37 @@ public class InputValidatorTest {
     }
 
     @Test
-    public void testValidate() {
-        String numStr1="1 2 3 4";
-        String numStr2="1 2 3";
-        String numStr3="1 2 3 4 5";
-        String numStr4="1 1 3 4";
-        String numStr5="10 2 3 4";
+    public void should_return_true_when_input_is_valid() {
+        assertTrue(inputValidator.validate("1 2 3 4"));
+    }
 
-        assertTrue(inputValidator.validate(numStr1));
-        assertFalse(inputValidator.validate(numStr2));
-        assertFalse(inputValidator.validate(numStr3));
-        assertFalse(inputValidator.validate(numStr4));
-        assertFalse(inputValidator.validate(numStr5));
+    @Test
+    public void should_return_false_when_input_digit_number_is_less_than_4() {
+        assertFalse(inputValidator.validate("1 2 3"));
+    }
+
+    @Test
+    public void should_return_false_when_input_digit_number_is_larger_than_4() {
+        assertFalse(inputValidator.validate("1 2 3 4 5"));
+    }
+
+    @Test
+    public void should_return_false_when_input_has_same_digits() {
+        assertFalse(inputValidator.validate("1 1 3 4"));
+    }
+
+    @Test
+    public void should_return_false_when_input_digit_is_larger_than_9() {
+        assertFalse(inputValidator.validate("10 2 3 4"));
+    }
+
+    @Test
+    public void should_return_false_when_input_has_same_digits_and_digit_number_is_larger_than_4() {
+        assertFalse(inputValidator.validate("1 1 2 3 4"));
+    }
+
+    @Test
+    public void should_return_false_when_input_has_same_digits_and_digit_is_larger_than_9() {
+        assertFalse(inputValidator.validate("1 2 3 3 10"));
     }
 }
